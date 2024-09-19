@@ -20,7 +20,7 @@ export function renderImages(images) {
     
     const markup = images.map(image => {
     return `
-       <div class="gallery-item">
+      <li class="gallery-item">
         <a href="${image.largeImageURL}" target="_blank">
           <img src="${image.webformatURL}" alt="${image.tags}" loading="lazy" />
         </a>
@@ -29,7 +29,8 @@ export function renderImages(images) {
           <p><b>Views:</b> ${image.views}</p>
           <p><b>Comments:</b> ${image.comments}</p>
           <p><b>Downloads:</b> ${image.downloads}</p>
-      </div>
+        </div>
+      </li>
     `;
   }).join('');
 
