@@ -87,3 +87,20 @@
 .hidden {
   display: none;
 }
+
+.loader {
+  display: none;
+  margin: 0 auto;
+}
+
+.loader.hidden {
+  display: none;
+}
+
+.btn.load-more {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}

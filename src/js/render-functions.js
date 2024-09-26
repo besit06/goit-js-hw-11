@@ -7,18 +7,16 @@ import "simplelightbox/dist/simple-lightbox.min.css";
 let lightbox;
 
 export function renderImages(images) {
-    const gallery = document.querySelector('.gallery');
-    gallery.innerHTML = '';
+  const gallery = document.querySelector('.gallery');
+  gallery.innerHTML = ''; 
 
-    if (images.length === 0) {
-        iziToast.error({
-            title: 'Error',
-            message: 'Sorry, there are no images matching your search query. Please try again!',
-    });
-    return;
-    }
-    
-    const markup = images.map(image => {
+  appendImages(images);
+}
+
+export function appendImages(images) {
+  const gallery = document.querySelector('.gallery');
+
+  const markup = images.map(image => {
     return `
       <li class="gallery-item">
         <a href="${image.largeImageURL}" target="_blank">
@@ -34,7 +32,7 @@ export function renderImages(images) {
     `;
   }).join('');
 
- gallery.innerHTML = markup;
+  gallery.insertAdjacentHTML('beforeend', markup); 
 
   if (lightbox) {
     lightbox.refresh();
@@ -49,4 +47,3 @@ export function showErrorMessage(message) {
     message,
   });
 }
-
