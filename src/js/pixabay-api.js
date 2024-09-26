@@ -11,7 +11,8 @@ export async function fetchImages(query, page = 1, perPage = 15) {
     return response.data;
   } catch (error) {
     console.error('Error fetching images:', error);
-    throw error;
+      throw error;
+      
   }
 
 }
